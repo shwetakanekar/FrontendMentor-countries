@@ -1,0 +1,34 @@
+.container {
+  padding: 48px;
+  margin-top: 5px;
+  background-color: hsl(0, 0%, 98%);
+
+  .search-container {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      background-image: url('../../assets/search.png');
+      background-size: 48px;
+      background-position: 0px -5px;
+      background-repeat: no-repeat;
+      padding: 10px 40px;
+      border: none;
+      box-shadow: 0 0 5px 0 hsla(0, 0%, 0%, 0.1);
+      max-width: 400px;
+      width: 50%;
+    }
+
+    select {
+      box-shadow: 0 0 5px 0 hsla(0, 0%, 0%, 0.1);
+      border: none;
+      width: 200px;
+      padding: 10px 20px;
+    }
+
+    select:focus, input:focus {
+      outline: none;
+    }
+  }
+
+}

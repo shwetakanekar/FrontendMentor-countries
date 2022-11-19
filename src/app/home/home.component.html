@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Search for a country..."
+      [(ngModel)]="countryName"
+      (keypress)="onSearch($event)"
+    />
+    <select [(ngModel)]="regionName" (change)="onRegionChanged()">
+      <option [ngValue]="undefined" selected disabled hidden>
+        Filter by Region
+      </option>
+      <option *ngFor="let region of regions" [ngValue]="region">
+        {{ region }}
+      </option>
+      <!-- <option value="america">America</option>
+      <option value="asia">Asia</option>
+      <option value="europe">Europe</option>
+      <option value="oceania">Oceania</option> -->
+    </select>
+  </div>
+
+  <div class="country-container">
+    <!-- <div *ngFor="let country of countries">
+          <p>{{ country.cca3 }} {{ country.name.common }}</p>
+        </div> -->
+  </div>
+</div>
