@@ -1,5 +1,5 @@
 .container {
-  padding: 48px;
+  padding: 48px 72px;
   margin-top: 5px;
   background-color: hsl(0, 0%, 98%);
 
@@ -31,4 +31,18 @@
     }
   }
 
+  .country-container {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card {
+      width: 21%;
+      box-shadow: 0 0 5px 0 hsla(0, 0%, 0%, 0.1);
+      height: 340px;
+      margin: 0 0 60px 0;
+      border-radius: 5px;
+    }
+  }
 }

@@ -1,0 +1,18 @@
+<div>
+  <img
+    src="{{ countryData.flags.png }}"
+    alt="Flag of {{ countryData.name.common }}"
+  />
+  <div class="country-info">
+    <h3>{{ countryData.name.common }}</h3>
+    <p *ngIf="countryData.population">
+      <span class="info-key">Population:</span> {{ countryData.population }}
+    </p>
+    <p *ngIf="countryData.region">
+      <span class="info-key">Region:</span> {{ countryData.region }}
+    </p>
+    <p *ngIf="countryData.capital && countryData.capital.length > 0">
+      <span class="info-key">Capital:</span> {{ countryData.capital[0] }}
+    </p>
+  </div>
+</div>
