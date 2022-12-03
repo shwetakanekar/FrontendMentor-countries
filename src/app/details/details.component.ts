@@ -108,4 +108,8 @@ export class DetailsComponent implements OnInit {
   goToBorderCountry(countryName: string) {
     this.router.navigate([countryName]);
   }
+
+  goToHomePage() {
+    this.router.navigate(['/']);
+  }
 }
