@@ -23,4 +23,10 @@ export class CountryService {
   getCountryByRegion(region: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.base_url}region/${region}`);
   }
+
+  getBorderCountries(countryCodeList: string): Observable<any[]> {
+    return this.http.get<any[]>(
+      `${this.base_url}alpha?codes=${countryCodeList}`
+    );
+  }
 }

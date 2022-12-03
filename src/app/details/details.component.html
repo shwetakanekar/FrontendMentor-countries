@@ -1,0 +1,71 @@
+<div class="container">
+  <button class="btn">
+    <span><i class="fa fa-regular fa-arrow-left"></i></span> Back
+  </button>
+  <div class="country-data">
+    <div class="flag">
+      <img
+        src="{{ countryData.length > 0 && countryData[0].flags.png }}"
+        alt="Flag of {{ countryData.length > 0 && countryData[0].name.common }}"
+      />
+    </div>
+    <div class="info">
+      <h1>{{ countryData.length > 0 && countryData[0].name.common }}</h1>
+      <div class="details">
+        <div class="details-left">
+          <p *ngIf="nativeNames != ''">
+            <span class="info-key">Native Names:</span>
+            {{ nativeNames }}
+          </p>
+          <p *ngIf="countryData.length > 0 && countryData[0].population">
+            <span class="info-key">Population:</span>
+            {{ countryData[0].population | number }}
+          </p>
+          <p *ngIf="countryData.length > 0 && countryData[0].region">
+            <span class="info-key">Region:</span> {{ countryData[0].region }}
+          </p>
+          <p *ngIf="countryData.length > 0 && countryData[0].subregion">
+            <span class="info-key">Sub Region:</span>
+            {{ countryData[0].subregion }}
+          </p>
+          <p
+            *ngIf="
+              countryData.length > 0 &&
+              countryData[0].capital &&
+              countryData[0].capital.length > 0
+            "
+          >
+            <span class="info-key">Capital:</span>
+            {{ countryData[0].capital[0] }}
+          </p>
+        </div>
+        <div class="details-right">
+          <p *ngIf="topLevelDomain != ''">
+            <span class="info-key">Top level Domain:</span>
+            {{ topLevelDomain }}
+          </p>
+          <p *ngIf="currencies != ''">
+            <span class="info-key">Currencies:</span>
+            {{ currencies }}
+          </p>
+          <p *ngIf="languages != ''">
+            <span class="info-key">Languages:</span>
+            {{ languages }}
+          </p>
+        </div>
+      </div>
+      <div class="border-countries">
+        <div *ngIf="borderCountryData.length > 0">
+          <span class="info-key">Border Countries: </span>
+          <div
+            *ngFor="let borderCountry of borderCountryData"
+            class="border-country"
+            (click)="goToBorderCountry(borderCountry.name.common)"
+          >
+            {{ borderCountry.name.common }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

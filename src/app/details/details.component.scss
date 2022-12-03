@@ -1,0 +1,65 @@
+.container {
+    padding: 48px 72px;
+    margin-top: 5px;
+    background-color: hsl(0, 0%, 98%);
+
+    .country-data {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 4rem;
+
+        .flag {
+            width: 45%;
+        }
+
+        .info {
+            width: 45%;
+            padding: 24px 0;
+
+            .details {
+                display: flex;
+                justify-content: space-between;
+                padding: 16px 0;
+
+                .details-left > p, .details-right > p {
+                    margin-top: 0.4rem;
+                }
+            }
+
+            .border-countries {
+                margin: 2rem 0;
+
+                .border-country {
+                    display: inline-block;
+                    margin: 0.5rem;
+                    padding: 0.25rem 1rem;
+                    box-shadow: 0 0 5px 0 hsla(0, 0%, 0%, 0.1);
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        .info-key {
+            font-weight: 600;
+        }
+        
+        img {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+    }
+
+    .btn {
+        background-color: #fff;
+        box-shadow: 0 0 5px 0 hsla(0, 0%, 0%, 0.1);
+        border: none;
+        padding: 10px 40px;
+        border-radius: 5px;
+
+        span {
+            margin-right: 10px;
+        }
+    }
+}

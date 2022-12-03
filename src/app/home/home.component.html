@@ -17,13 +17,11 @@
   </div>
 
   <div class="country-container">
-    <!-- <div *ngFor="let country of countries">
-      <p>{{ country.cca3 }} {{ country.name.common }}</p>
-    </div> -->
     <app-country-card
       class="card"
       *ngFor="let country of countries"
       [countryData]="country"
+      routerLink="/{{ country.name.common }}"
     ></app-country-card>
   </div>
 </div>
