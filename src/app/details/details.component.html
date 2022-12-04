@@ -1,5 +1,9 @@
-<div class="container">
-  <button class="btn" (click)="goToHomePage()">
+<div class="container" [ngClass]="{ 'dark-mode': theme === 'dark' }">
+  <button
+    class="btn"
+    [ngClass]="{ 'dark-mode': theme === 'dark' }"
+    (click)="goToHomePage()"
+  >
     <span><i class="fa fa-regular fa-arrow-left"></i></span> Back
   </button>
   <div class="country-data">
@@ -60,6 +64,7 @@
           <div
             *ngFor="let borderCountry of borderCountryData"
             class="border-country"
+            [ngClass]="{ 'dark-mode': theme === 'dark' }"
             (click)="goToBorderCountry(borderCountry.name.common)"
           >
             {{ borderCountry.name.common }}

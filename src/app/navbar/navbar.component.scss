@@ -22,3 +22,9 @@ nav {
         }
     }
 }
+
+.dark-mode {
+    color: white;
+    background: hsl(209, 23%, 22%);
+    box-shadow: 0 0 10px 16px hsl(207deg 26% 17%);
+}

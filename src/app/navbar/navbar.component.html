@@ -1,8 +1,13 @@
-<nav>
+<nav [ngClass]="{ 'dark-mode': theme === 'dark' }">
   <div class="navbar-container">
     <div class="title">Where in the world?</div>
-    <div class="theme">
-      <span><i class="fa fa-regular fa-moon"></i></span>Dark Mode
+    <div class="theme" (click)="toggleTheme()">
+      <ng-container *ngIf="theme === 'light'">
+        <span><i class="fa fa-regular fa-moon"></i></span>Dark Mode
+      </ng-container>
+      <ng-container *ngIf="theme === 'dark'">
+        <span><i class="fa fa-regular fa-sun"></i></span>Light Mode
+      </ng-container>
     </div>
   </div>
 </nav>

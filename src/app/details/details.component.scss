@@ -2,6 +2,7 @@
     padding: 48px 72px;
     margin-top: 5px;
     background-color: hsl(0, 0%, 98%);
+    min-height: 100vh;
 
     .country-data {
         display: flex;
@@ -63,4 +64,14 @@
             margin-right: 10px;
         }
     }
+}
+
+.dark-mode.container {
+    background: hsl(207, 26%, 17%);
+    color: white;
+}
+
+.dark-mode.btn, .dark-mode.border-country {
+    background-color: hsl(209, 23%, 22%) !important;
+    color: white;
 }

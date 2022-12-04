@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CountryService } from '../services/country.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +13,17 @@ export class HomeComponent implements OnInit {
   countryName: any = '';
   regionName: any = '';
   regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  theme = '';
 
-  constructor(private countryService: CountryService) {}
+  constructor(
+    private countryService: CountryService,
+    private themeService: ThemeService
+  ) {}
 
   ngOnInit(): void {
+    this.themeService.getTheme().subscribe((currentTheme) => {
+      this.theme = currentTheme;
+    });
     this.countryService.getAllCountries().subscribe((countryData) => {
       console.log(countryData);
       this.countries = countryData;

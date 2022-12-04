@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountryService } from '../services/country.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-details',
@@ -16,14 +17,20 @@ export class DetailsComponent implements OnInit {
   nativeNames: string = '';
   borderCountryCodes: string = '';
   borderCountryData: any[] = [];
+  theme: string = '';
 
   constructor(
     private route: ActivatedRoute,
     private countryService: CountryService,
-    private router: Router
+    private router: Router,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit(): void {
+    this.themeService.getTheme().subscribe((currentTheme) => {
+      this.theme = currentTheme;
+    });
+
     this.route.params.subscribe((param) => {
       this.countryName = param['id'];
       this.languages = '';

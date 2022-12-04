@@ -1,12 +1,17 @@
-<div class="container">
+<div class="container" [ngClass]="{ 'dark-mode': theme === 'dark' }">
   <div class="search-container">
     <input
       type="text"
       placeholder="Search for a country..."
       [(ngModel)]="countryName"
       (keypress)="onSearch($event)"
+      [ngClass]="{ 'dark-mode': theme === 'dark' }"
     />
-    <select [(ngModel)]="regionName" (change)="onRegionChanged()">
+    <select
+      [(ngModel)]="regionName"
+      (change)="onRegionChanged()"
+      [ngClass]="{ 'dark-mode': theme === 'dark' }"
+    >
       <option [ngValue]="undefined" selected disabled hidden>
         Filter by Region
       </option>
@@ -19,6 +24,7 @@
   <div class="country-container">
     <app-country-card
       class="card"
+      [ngClass]="{ 'dark-mode': theme === 'dark' }"
       *ngFor="let country of countries"
       [countryData]="country"
       routerLink="/{{ country.name.common }}"
