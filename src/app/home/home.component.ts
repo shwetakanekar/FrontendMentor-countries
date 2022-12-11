@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
       this.theme = currentTheme;
     });
     this.countryService.getAllCountries().subscribe((countryData) => {
-      console.log(countryData);
       this.countries = countryData;
     });
     this.regionName = undefined;
@@ -36,7 +35,6 @@ export class HomeComponent implements OnInit {
       this.countryService.getCountryByName(this.countryName).subscribe({
         next: (countryData) => {
           this.countries = countryData;
-          console.log(countryData);
           this.regionName = undefined;
         },
         error: (err) => {
@@ -48,11 +46,9 @@ export class HomeComponent implements OnInit {
   }
 
   onRegionChanged() {
-    console.log(this.regionName);
     this.countryService.getCountryByRegion(this.regionName).subscribe({
       next: (countryData) => {
         this.countries = countryData;
-        console.log(countryData);
       },
       error: (err) => {
         console.log(err);
