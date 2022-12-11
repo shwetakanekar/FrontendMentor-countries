@@ -14,6 +14,7 @@
       background-repeat: no-repeat;
       padding: 10px 40px;
       border: none;
+      border-radius: 5px;
       box-shadow: 0 0 5px 0 hsla(0, 0%, 0%, 0.1);
       max-width: 400px;
       width: 50%;
@@ -22,6 +23,7 @@
     select {
       box-shadow: 0 0 5px 0 hsla(0, 0%, 0%, 0.1);
       border: none;
+      border-radius: 5px;
       width: 200px;
       padding: 10px 20px;
     }
@@ -41,7 +43,7 @@
       width: 21%;
       box-shadow: 0 0 5px 0 hsla(0, 0%, 0%, 0.1);
       height: 340px;
-      margin: 0 0 60px 0;
+      margin: 0 10px 60px 10px;
       border-radius: 5px;
     }
   }
@@ -60,4 +62,45 @@ input.dark-mode, select.dark-mode{
 
 .card.dark-mode {
     background: hsl(209, 23%, 22%);
+}
+
+@media screen and (max-width: 1208px) {
+  .card {
+    width: 28% !important;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .card {
+    width: 44% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .country-container {
+    padding: 0 36px;
+    justify-content: center !important;
+    
+    .card {
+      width: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container {
+    padding: 24px 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-container {
+    display: block !important;
+
+    input {
+      width: 100% !important;
+      max-width: 480px !important;
+      margin-bottom: 36px !important;
+    }
+  }
 }

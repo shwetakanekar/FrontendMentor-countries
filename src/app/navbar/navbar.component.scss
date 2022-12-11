@@ -28,3 +28,19 @@ nav {
     background: hsl(209, 23%, 22%);
     box-shadow: 0 0 10px 16px hsl(207deg 26% 17%);
 }
+
+@media screen and (max-width: 540px) {
+    nav {
+        padding: 24px 18px;
+    }
+
+    .navbar-container {
+        .title {
+            font-size: 18px;
+        }
+    
+        .theme {
+            font-size: 14px;
+        }
+    }
+}

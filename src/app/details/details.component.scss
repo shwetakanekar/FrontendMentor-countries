@@ -15,12 +15,12 @@
 
         .info {
             width: 45%;
-            padding: 24px 0;
+            padding: 1.5rem 0;
 
             .details {
                 display: flex;
                 justify-content: space-between;
-                padding: 16px 0;
+                padding: 1rem 0;
 
                 .details-left > p, .details-right > p {
                     margin-top: 0.4rem;
@@ -74,4 +74,37 @@
 .dark-mode.btn, .dark-mode.border-country {
     background-color: hsl(209, 23%, 22%) !important;
     color: white;
+}
+
+@media screen and (max-width: 1140px) {
+        .details {
+            flex-direction: column;
+        }
+
+        .border-countries span {
+            display: block;
+        }   
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 48px 36px;
+    
+        .country-data {
+            flex-direction: column;
+    
+            .flag {
+                width: 100%;
+            }
+
+            .info {
+                width: 100% !important;
+                padding: 3rem 0;
+
+                .details-left > p, .details-right > p {
+                    margin-top: 0.6rem !important;
+                }
+            }
+        }
+    }
 }
