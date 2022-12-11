@@ -37,11 +37,13 @@ export class HomeComponent implements OnInit {
         next: (countryData) => {
           this.countries = countryData;
           console.log(countryData);
+          this.regionName = undefined;
         },
         error: (err) => {
           console.log(err);
         },
       });
+      this.countryName = '';
     }
   }
 
